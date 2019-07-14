@@ -21,3 +21,11 @@ Route.get('/', () => {
 })
 
 Route.resource('products', 'ProductController')
+Route.resource('products', 'Product')
+
+Route.resource('categories', 'CategoryController')
+Route.resource('categories', 'Category')
+
+Route.resource('orders', 'OrderController')
+Route.resource('orders', 'Order')
+

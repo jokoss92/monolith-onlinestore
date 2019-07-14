@@ -1,17 +1,16 @@
 'use strict'
-const Product = use("App/Models/Product")
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
- * Resourceful controller for interacting with products
+ * Resourceful controller for interacting with inventories
  */
-class ProductController {
+class InventoryController {
   /**
-   * Show a list of all products.
-   * GET products
+   * Show a list of all inventories.
+   * GET inventories
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -19,13 +18,11 @@ class ProductController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    const Model = await Product.all()
-    return response.json(Model)
   }
 
   /**
-   * Render a form to be used for creating a new product.
-   * GET products/create
+   * Render a form to be used for creating a new inventory.
+   * GET inventories/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -36,8 +33,8 @@ class ProductController {
   }
 
   /**
-   * Create/save a new product.
-   * POST products
+   * Create/save a new inventory.
+   * POST inventories
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -47,8 +44,8 @@ class ProductController {
   }
 
   /**
-   * Display a single product.
-   * GET products/:id
+   * Display a single inventory.
+   * GET inventories/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -59,8 +56,8 @@ class ProductController {
   }
 
   /**
-   * Render a form to update an existing product.
-   * GET products/:id/edit
+   * Render a form to update an existing inventory.
+   * GET inventories/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -71,8 +68,8 @@ class ProductController {
   }
 
   /**
-   * Update product details.
-   * PUT or PATCH products/:id
+   * Update inventory details.
+   * PUT or PATCH inventories/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -82,8 +79,8 @@ class ProductController {
   }
 
   /**
-   * Delete a product with id.
-   * DELETE products/:id
+   * Delete a inventory with id.
+   * DELETE inventories/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -93,4 +90,4 @@ class ProductController {
   }
 }
 
-module.exports = ProductController
+module.exports = InventoryController

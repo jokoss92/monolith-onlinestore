@@ -1,17 +1,17 @@
 'use strict'
-const Product = use("App/Models/Product")
+const Cart = use("App/Models/Cart")
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
- * Resourceful controller for interacting with products
+ * Resourceful controller for interacting with carts
  */
-class ProductController {
+class CartController {
   /**
-   * Show a list of all products.
-   * GET products
+   * Show a list of all carts.
+   * GET carts
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -19,13 +19,13 @@ class ProductController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    const Model = await Product.all()
+    const Model = await Cart.all()
     return response.json(Model)
   }
 
   /**
-   * Render a form to be used for creating a new product.
-   * GET products/create
+   * Render a form to be used for creating a new cart.
+   * GET carts/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -36,8 +36,8 @@ class ProductController {
   }
 
   /**
-   * Create/save a new product.
-   * POST products
+   * Create/save a new cart.
+   * POST carts
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -47,8 +47,8 @@ class ProductController {
   }
 
   /**
-   * Display a single product.
-   * GET products/:id
+   * Display a single cart.
+   * GET carts/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -59,8 +59,8 @@ class ProductController {
   }
 
   /**
-   * Render a form to update an existing product.
-   * GET products/:id/edit
+   * Render a form to update an existing cart.
+   * GET carts/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -71,8 +71,8 @@ class ProductController {
   }
 
   /**
-   * Update product details.
-   * PUT or PATCH products/:id
+   * Update cart details.
+   * PUT or PATCH carts/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -82,8 +82,8 @@ class ProductController {
   }
 
   /**
-   * Delete a product with id.
-   * DELETE products/:id
+   * Delete a cart with id.
+   * DELETE carts/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -93,4 +93,4 @@ class ProductController {
   }
 }
 
-module.exports = ProductController
+module.exports = CartController
